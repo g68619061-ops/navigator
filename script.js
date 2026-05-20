@@ -1,38 +1,41 @@
-// const myapi = `https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m`;
+let temp = document.querySelector("#temp");
+let city = document.querySelector("#city");
+let humidity = document.querySelector("#humidity");
+let feel = document.querySelector("#feel");
+let wind = document.querySelector("#wind");
 
-// async function mine() {
-//     let z = await fetch(myapi);
-//     let s = await z.json();
-//     console.log(s);
-
-// }
-// mine();
-
-let mydata = document.querySelector("#data");
-let myerror = document.querySelector("#error");
-let fetchi = document.querySelector("h1");
-
-let lati;
-let longi;
+let la;
+let lo;
 
 function a(data) {
-    console.log(data);
-    lati = data.coords.latitude;
-    longi = data.coords.longitude;
-    console.log(`Latitude : ${lati} and Logitude : ${longi}`)
-    mydata.innerHTML = `Latitude : ${lati}<br>Logitude : ${longi}`
-    fetchi.style.display="none";
+    la = data.coords.latitude;
+    lo = data.coords.longitude;
+    console.log(`Latitude : ${la} Longitude : ${lo}`)
+    jsd();
 }
-
 function b(error) {
-    console.log(`Problem to fetch data ${error}`);
-    myerror.innerHTML = `Problem to fetch data ${error}`
-    myerror.style.color = "red";
-     fetchi.style.display="none";
-
+    console.log("Error");
 }
 
-function f() {
+function c() {
     navigator.geolocation.getCurrentPosition(a, b);
 }
-f();
+
+
+c();
+
+async function jsd() {
+    let myap = `https://api.openweathermap.org/data/2.5/weather?lat=${la}&lon=${lo}&appid=e405b5324908da8d44e445b9c12b6bbb&units=metric`;
+    try{
+    let s = await fetch(myap);
+    let gs = await s.json();
+    console.log(gs);
+    temp.innerHTML=`${Math.round(gs.main.temp)}°`;
+    city.innerHTML=`City : ${gs.name}`;
+    humidity.innerHTML=`Humidity : ${gs.main.humidity}%`;
+    feel.innerHTML=`Feels Like : ${Math.round(gs.main.feels_like)}°`;
+    wind.innerHTML=`Wind Speed ${gs.wind.speed}kmph`;
+} catch (rr) {
+    console.log("Error to fetch data");
+}
+}
