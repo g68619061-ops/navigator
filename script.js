@@ -5,8 +5,7 @@ let feel = document.querySelector("#feel");
 let wind = document.querySelector("#wind");
 let deny = document.querySelector("#deny");
 let main = document.querySelector("#main");
-// let main = document.querySelector("#main");
-
+let condition = document.querySelector("#condition");
 let la;
 let lo;
 
@@ -16,9 +15,9 @@ function a(data) {
     console.log(`Latitude : ${la} Longitude : ${lo}`)
     deny.style.display = "none";
     main.style.display = "flex";
-
     jsd();
 }
+
 function b(error) {
     console.log("Error");
     deny.style.display = "block";
@@ -30,8 +29,6 @@ function b(error) {
 function c() {
     navigator.geolocation.getCurrentPosition(a, b);
 }
-
-
 c();
 
 async function jsd() {
@@ -44,7 +41,8 @@ async function jsd() {
         city.innerHTML = `City : ${gs.name}`;
         humidity.innerHTML = `Humidity : ${gs.main.humidity}%`;
         feel.innerHTML = `Feels Like : ${Math.round(gs.main.feels_like)}°`;
-        wind.innerHTML = `Wind Speed ${gs.wind.speed}kmph`;
+        wind.innerHTML = `Wind Speed : ${Math.round(gs.wind.speed)} kmph`;
+        condition.innerHTML = `${gs.weather[0].description}`;
     } catch (rr) {
         console.log("Error to fetch data");
         alert("Problem to fetching data.")
