@@ -6,6 +6,8 @@ let wind = document.querySelector("#wind");
 let deny = document.querySelector("#deny");
 let main = document.querySelector("#main");
 let condition = document.querySelector("#condition");
+let body = document.querySelector("body");
+let owner = document.querySelector("#owner");
 let la;
 let lo;
 
@@ -43,6 +45,10 @@ async function jsd() {
         feel.innerHTML = `Feels Like : ${Math.round(gs.main.feels_like)}°`;
         wind.innerHTML = `Wind Speed : ${Math.round(gs.wind.speed)} kmph`;
         condition.innerHTML = `${gs.weather[0].description}`;
+        if (condition.innerHTML === "haze") {
+            body.style.backgroundImage = "linear-gradient(white, white, rgba(0, 69, 83, 0.87))";
+            owner.style.color = "white";
+        }
     } catch (rr) {
         console.log("Error to fetch data");
         alert("Problem to fetching data.")
