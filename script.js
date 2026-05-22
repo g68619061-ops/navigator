@@ -23,8 +23,8 @@ function a(data) {
 function b(error) {
     console.log("Error");
     deny.style.display = "block";
-    deny.style.color = "red";
-    deny.innerHTML = "Trun On Location Service"
+    deny.style.color = "rgb(255, 0, 0)";
+    deny.innerHTML = "⚲ Turn On Location Service"
     main.style.display = "none";
 }
 
