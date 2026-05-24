@@ -46,13 +46,24 @@ async function jsd() {
         wind.innerHTML = `Wind Speed : ${Math.round(gs.wind.speed)} kmph`;
         condition.innerHTML = `${gs.weather[0].description}`;
         if (condition.innerHTML === "haze" && window.innerWidth > 600) {
-            body.style.backgroundImage = "url('haze_pc.jpg')";
+            body.style.backgroundImage = " linear-gradient(rgba(0, 0, 0, 0.42)), url('haze_pc.jpg')";
             body.style.backgroundSize = "cover";
+            body.style.color = "white";
+            condition.style.color = "white";
             owner.style.color = "white";
         }
         else if (condition.innerHTML === "haze") {
-            body.style.backgroundImage = "url('haze.png')";
+            body.style.backgroundImage = " linear-gradient(rgba(0, 0, 0, 0.51)), url('haze.png')";
             body.style.backgroundSize = "cover";
+            body.style.color = "white";
+            condition.style.color = "white";
+            owner.style.color = "white";
+        }
+        else if (condition.innerHTML === "clear sky") {
+            body.style.backgroundImage = " linear-gradient(rgba(0, 0, 0, 0.51)), url('clear_sky.png')";
+            body.style.backgroundSize = "cover";
+            body.style.color = "white";
+            condition.style.color = "white";
             owner.style.color = "white";
         }
     } catch (rr) {
