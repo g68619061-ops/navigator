@@ -19,8 +19,13 @@ body {
 
 
 #main {
+       background: transparent;
+        backdrop-filter: blur(4px);
+        border-radius: 5vw;
+        border: 0.2vw solid rgba(255, 255, 255, 0.174);
+        box-shadow: 1vw 1vh 3vw rgba(0, 0, 0, 0.436);
+        width: 50%;
     height: 80dvh;
-    /* background-color: antiquewhite; */
     position: relative;
     bottom: 7vh;
     display: none;
@@ -166,8 +171,13 @@ body {
     }
 
     #main {
-        height: 55vh;
-        width: 60%;
+        background: transparent;
+        backdrop-filter: blur(4px);
+        border-radius: 5vw;
+        border: 0.2vw solid rgba(255, 255, 255, 0.174);
+        box-shadow: 1vw 1vh 3vw rgba(0, 0, 0, 0.436);
+        height: 65vh;
+        width: 80%;
         position: relative;
         bottom: 8vh;
         display: none;
