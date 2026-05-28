@@ -176,7 +176,7 @@ body {
         border-radius: 5vw;
         border: 0.2vw solid rgba(255, 255, 255, 0.174);
         box-shadow: 1vw 1vh 3vw rgba(0, 0, 0, 0.436);
-        height: 50vh;
+        height: 70vh;
         width: 80%;
         position: relative;
         bottom: 8vh;
@@ -216,7 +216,7 @@ body {
 
     #condition {
         color: rgb(54, 54, 54);
-        font-size: 20vw;
+        font-size: 12vw;
     }
 
     #owner {
