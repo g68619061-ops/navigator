@@ -66,8 +66,15 @@ async function jsd() {
             condition.style.color = "white";
             owner.style.color = "white";
         }
-             else if (condition.innerHTML === "broken clouds") {
+        else if (condition.innerHTML === "broken clouds") {
             body.style.backgroundImage = " linear-gradient(rgba(73, 73, 73, 0.51)), url('broken_clouds.png')";
+            body.style.backgroundSize = "cover";
+            body.style.color = "white";
+            condition.style.color = "white";
+            owner.style.color = "white";
+        }
+        else if (condition.innerHTML === "thunderstorm") {
+            body.style.backgroundImage = " linear-gradient(rgba(73, 73, 73, 0.51)), url('thunder.png')";
             body.style.backgroundSize = "cover";
             body.style.color = "white";
             condition.style.color = "white";
